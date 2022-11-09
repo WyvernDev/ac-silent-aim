@@ -22,7 +22,6 @@ void __declspec(naked) silent_aim_hook()
 		cmp eax, 0
 		pop eax
 		jle exit_hook
-
 		
 		push eax
 		call game::client::get_local_player
@@ -34,6 +33,9 @@ void __declspec(naked) silent_aim_hook()
 		call game::client::get_closest_enemy
 		cmp eax, 0
 		je pop_eax
+		add eax, 4
+		mov ecx, eax
+		mov eax, [old_eax]
 		jmp [silent_aim_func]
 
 	pop_eax:
@@ -45,8 +47,8 @@ void __declspec(naked) silent_aim_hook()
 
 int main()
 {
-	original_func = tramp_hook(game::client::base + game::offsets::hook_location, (int)silent_aim_hook, 1);
-	silent_aim_func = original_func + 3;
+	original_func = tramp_hook(game::client::base + game::offsets::silent_aim_hook_location, (int)silent_aim_hook);
+	silent_aim_func = original_func + 4;
 
 	while (true)
 	{
