@@ -17,6 +17,6 @@ namespace game::offsets
 	/*
 	* function offsets
 	*/
-	constexpr auto silent_aim_hook_location = 0x637B6;
+	constexpr auto silent_aim_hook_location = 0x637B6; /*this is where we hook so we can spoof the position at which the bullet spawns in...*/
 
 }

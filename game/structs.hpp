@@ -2,6 +2,10 @@
 #include <cstdint>
 #include "../math/vec.hpp"
 
+/*
+* thank you reclass
+*/
+
 namespace game::structs
 {
 	enum class player_state_t : int32_t

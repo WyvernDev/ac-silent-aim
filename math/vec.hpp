@@ -2,6 +2,10 @@
 #include <cmath>
 #include <cstdint>
 
+/*
+* simple vector class shit
+*/
+
 struct vec2_t
 {
 	float x, y;

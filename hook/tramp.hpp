@@ -4,6 +4,9 @@
 #include <cstddef>
 #include <stdexcept>
 
+/*
+* trampoline hooking shit...
+*/
 
 inline auto calculate_relative(const std::uintptr_t location, const std::uintptr_t function_addr)
 {
